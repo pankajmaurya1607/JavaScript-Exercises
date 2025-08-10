@@ -9,26 +9,35 @@ function getCurrentTime() {
     // darte object
     const currentTime = new Date();
 
-    console.log(currentTime);
-
+    // console.log(currentTime);
+    
     // get day
     const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    
     const currentDay = days[currentTime.getDay()];
+    
 
     // get time component
     let hours = currentTime.getHours();
-    const minutes = currentTime.getMinutes();
-    const second = currentTime.getSeconds();
+    let minutes = currentTime.getMinutes();
+    let seconds = currentTime.getSeconds();
 
     // AM PM
     const ampm = hours > 12 ? 'PM' : "AM";
     hours = hours % 12;
     hours = hours ? hours : 12;
 
+    // zero-padding
+    minutes = minutes.toString().padStart(2, '0');
+    seconds = seconds.toString().padStart(2, '0');
+
     // display
-    console.log(`Today is : ${currentDay}.`);
-    console.log(`Current Time is : ${hours} ${ampm} : ${minutes} : ${second}.`);
+    // console.log(`Today is : ${currentDay}.`);
+    // console.log(`Current Time is : ${hours} ${ampm} : ${minutes} : ${seconds}.`);
+
+    // create output string
+    const output = `Today is : ${currentDay}.<br>Current Time is : ${hours} ${ampm} : ${minutes} : ${seconds}`;
+    
+    return output
 }
 
-getCurrentTime()
+// getCurrentTime()
