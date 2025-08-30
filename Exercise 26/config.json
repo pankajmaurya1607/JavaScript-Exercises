@@ -1,0 +1,6 @@
+{
+  "appName": "Learning by Doing",
+  "version": "1.0.0",
+  "maxUsers": 50,
+  "features": ["login", "profile", "posts"]
+}
